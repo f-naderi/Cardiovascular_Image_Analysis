@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+arcade/
+archive/
+data/
+mnist_data/
+results/.ipynb_checkpoints/
+results/best_model.pth
+venv/
