@@ -228,8 +228,8 @@ def main():
     # Dataset
     # ======================================================
 
-    train_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="train", image_size=IMAGE_SIZE)
-    val_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="val", image_size=IMAGE_SIZE)
+    train_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="train", image_size=IMAGE_SIZE, augment=True)
+    val_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="val", image_size=IMAGE_SIZE, augment=False)
 
     print(f"Training samples: {len(train_dataset)}")
     print(f"Validation samples: {len(val_dataset)}")

@@ -8,7 +8,7 @@ A medical image segmentation project using a U-Net convolutional neural network 
 - Coronary stenosis segmentation from X-ray angiography
 - COCO-style annotation parsing and binary mask generation
 - PyTorch + FP16/CUDA training
-- Dice-based evaluation and inference
+- Dice-based evaluation
 
 
 ## Project Structure
@@ -19,7 +19,7 @@ Cardiovascular_Image_Analysis/
 │   ├── dataset.py              # Data loading pipeline
 │   ├── model.py                # U-Net architecture
 │   ├── train.py                # Training pipeline
-│   └── inference.py            # Model inference
+│   └── evaluate.py             # Model evaluation
 │
 ├── results/
 │   ├── best_model.pth          # Best validation checkpoint
@@ -67,6 +67,7 @@ pip install -r requirements.txt
 * Pillow
 * Matplotlib
 * tqdm
+* Jupyter Notebook
 
 ## References
 

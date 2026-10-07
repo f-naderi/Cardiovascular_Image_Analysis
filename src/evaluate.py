@@ -66,6 +66,8 @@ def save_visualization(image, mask, prediction, index):
     mask = mask.squeeze().cpu()
     prediction = prediction.squeeze().cpu()
 
+    # Convert image from [-1, 1] to [0, 1]
+    image = (image + 1.0) / 2.0
     plt.figure(figsize=(15, 5))
 
     # -----------------------------------------------------
@@ -112,7 +114,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Load Test Dataset
-    test_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="test", image_size=IMAGE_SIZE)
+    test_dataset = ARCADEDataset(root_dir=DATASET_ROOT, split="test", image_size=IMAGE_SIZE, augment=False)
     print(f"Test samples: {len(test_dataset)}")
 
     # DataLoader
@@ -122,7 +124,7 @@ def main():
     model = load_model()
 
     # -----------------------------------------------------
-    # Inference
+    # Evaluation
     # -----------------------------------------------------
 
     running_dice = 0.0
@@ -131,7 +133,7 @@ def main():
 
     with torch.no_grad():
 
-        progress_bar = tqdm(test_loader, desc="Inference", leave=True)
+        progress_bar = tqdm(test_loader, desc="Evaluation", leave=True)
 
         for images, masks in progress_bar:
 
@@ -139,7 +141,7 @@ def main():
             masks = masks.to(DEVICE, non_blocking=True)
 
             # ---------------------------------------------
-            # FP16 inference
+            # FP16 Evaluation
             # ---------------------------------------------
 
             with torch.amp.autocast(device_type="cuda", dtype=torch.float16, enabled=torch.cuda.is_available()):
@@ -181,7 +183,7 @@ def main():
 
     print()
     print("-" * 50)
-    print("Inference completed.")
+    print("Evaluation completed.")
     print("-" * 50)
     print(f"Test Dice: {mean_dice:.4f}")
     print(f"Saved predictions: {saved_images}")
