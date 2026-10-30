@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ## References
 
-* ARCADE: Annotated Coronary Artery Disease dataset
+* ARCADE: Automatic Region-based Coronary Artery Disease Diagnostics Using X-Ray Angiography Images
 * Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation.
 
 ```
