@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ## References
 
-* ARCADE: Automatic Region-based Coronary Artery Disease Diagnostics Using X-Ray Angiography Images
-* Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation.
+* Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., ... & Fazli, S. (2024). Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images. Scientific data, 11(1), 20.
+* Ronneberger, O., Fischer, P., & Brox, T. (2015, October). U-net: Convolutional networks for biomedical image segmentation. In International Conference on Medical image computing and computer-assisted intervention (pp. 234-241). Cham: Springer international publishing.
 
 ```
